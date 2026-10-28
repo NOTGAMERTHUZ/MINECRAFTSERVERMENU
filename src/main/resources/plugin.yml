@@ -1,0 +1,37 @@
+name: ThuzMenu
+version: '${version}'
+main: io.github.notgamerthuz.thuzmenu.ThuzMenu
+api-version: '26.2'
+author: NOTGAMERTHUZ
+website: https://github.com/NOTGAMERTHUZ
+description: A fully configurable SMP menu - forged by GAMERTHUZ.
+softdepend: [PlaceholderAPI]
+
+commands:
+  menu:
+    description: Open the SMP menu
+    usage: /menu [name]
+    aliases: [smp, smpmenu]
+  thuzmenu:
+    description: ThuzMenu admin command
+    usage: /thuzmenu <about|reload|list|open|give>
+
+permissions:
+  thuzmenu.use:
+    description: Open menus with /menu and the hotbar item
+    default: true
+  thuzmenu.admin:
+    description: Reload, list and force-open menus; sees admin buttons
+    default: op
+  thuzmenu.spawn:
+    description: Use the built-in [spawn] action
+    default: true
+  thuzmenu.back:
+    description: Use the built-in [back] action (return to death location)
+    default: true
+  thuzmenu.bypass.cooldown:
+    description: Ignore button and teleport cooldowns
+    default: op
+  thuzmenu.bypass.warmup:
+    description: Skip the teleport warm-up
+    default: op
