@@ -1,0 +1,85 @@
+# ==========================================================================
+#  ThuzMenu  -  forged by GAMERTHUZ  (https://github.com/NOTGAMERTHUZ)
+# ==========================================================================
+#  Text everywhere supports MiniMessage  (<red>, <bold>, <gradient:#00e5ff:#7c4dff>)
+#  and classic color codes  (&a, &l, &#00e5ff).
+#
+#  The menus themselves live in:  plugins/ThuzMenu/menus/*.yml
+#  Every .yml file in that folder is a menu. The file name is the menu name
+#  (main.yml -> /menu main). Add your own files to make new menus.
+#  After editing anything run:  /thuzmenu reload
+# ==========================================================================
+
+# Shown in front of plugin messages.
+prefix: "<gradient:#00e5ff:#7c4dff><bold>SMP</bold></gradient> <dark_gray>»</dark_gray> "
+
+# Used by the {server} placeholder in menus.
+server-name: "My SMP"
+
+# Menu opened by /menu (and by the hotbar item) when no name is given.
+default-menu: main
+
+# How often menus marked "live: true" refresh (20 ticks = 1 second).
+update-interval-ticks: 20
+
+# Sounds: "sound.key volume pitch"  (leave "" for silence).
+# Sound list: https://minecraft.wiki/w/Sounds.json
+sounds:
+  open: "block.ender_chest.open 0.6 1.2"
+  click: "ui.button.click 0.7 1.2"
+  deny: "entity.villager.no 0.7 1.0"
+  teleport: "entity.enderman.teleport 0.7 1.0"
+
+# The item players carry in their hotbar.
+# Right-click it (or press Shift + F) to open the menu.
+menu-item:
+  enabled: true
+  give-on-join: true
+  give-on-respawn: true
+  slot: 8                      # hotbar slot 0-8 (8 = far right)
+  menu: main
+  open-on-right-click: true
+  open-with-sneak-swap: true   # Shift + F opens the menu
+  prevent-move: true           # can't be dropped or put into chests
+  material: NETHER_STAR
+  name: "<gradient:#00e5ff:#7c4dff><bold>SMP Menu</bold></gradient> <gray>(Right-click)"
+  lore:
+    - "<gray>Teleports, homes, stats"
+    - "<gray>and much more."
+  glow: true
+
+# Built-in [spawn] and [back] actions.
+teleport:
+  warmup-seconds: 3            # 0 = instant
+  cancel-on-move: true
+  cooldown-seconds: 10
+  back-expire-minutes: 30      # how long your death location is remembered (0 = forever)
+  safe-back: true              # move the death spot out of walls / away from lava
+  # Leave world empty to use the main world's spawn point.
+  spawn:
+    world: ""
+    x: 0.5
+    y: 80
+    z: 0.5
+    yaw: 0
+    pitch: 0
+
+# All plugin messages. {placeholders} are filled in automatically.
+messages:
+  no-permission: "<red>You don't have permission to do that."
+  menu-not-found: "<red>The menu <white>{menu}</white> does not exist."
+  player-only: "<red>Only players can use this."
+  player-not-found: "<red>Player not found."
+  cooldown: "<red>Please wait <white>{seconds}s</white> before using this again."
+  reloaded: "<green>Reloaded the config and <white>{count}</white> menu(s)."
+  menu-list: "<gray>Menus: <white>{menus}"
+  item-given: "<green>Gave the menu item to <white>{player}</white>."
+  teleport-warmup: "<gray>Teleporting in <white>{seconds}s</white><gray> - don't move!"
+  teleport-cancelled: "<red>Teleport cancelled because you moved."
+  teleport-pending: "<red>You are already teleporting."
+  teleport-cooldown: "<red>You can teleport again in <white>{seconds}s</white>."
+  teleport-spawn: "<green>Welcome to spawn!"
+  teleport-back: "<green>You returned to your last death location."
+  no-death-point: "<red>You have no recent death location to return to."
+  open-link: "<aqua><underlined>Click here to open the link"
+  trash-title: "<dark_red>Trash <gray>(items are deleted when you close)"
