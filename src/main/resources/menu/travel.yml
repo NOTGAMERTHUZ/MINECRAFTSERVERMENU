@@ -1,0 +1,78 @@
+# Travel menu. The commands here call YOUR existing plugins (tpa, rtp...).
+# If your plugin uses different command names, just change them below.
+
+title: "<gradient:#00e5ff:#7c4dff><bold>Travel</bold></gradient>"
+rows: 5
+
+fill:
+  mode: border
+  material: PURPLE_STAINED_GLASS_PANE
+
+buttons:
+  tpa:
+    slot: 10
+    material: ENDER_PEARL
+    name: "<light_purple><bold>Teleport Request"
+    lore:
+      - "<gray>Pick a player to ask if you"
+      - "<gray>can teleport to them."
+      - ""
+      - "<yellow>Click to choose a player"
+    actions:
+      - "[menu] players"
+
+  accept:
+    slot: 12
+    material: LIME_DYE
+    name: "<green><bold>Accept Request"
+    lore:
+      - "<gray>Accept the latest teleport"
+      - "<gray>request sent to you."
+    actions:
+      - "[player] tpaccept"
+
+  deny:
+    slot: 14
+    material: RED_DYE
+    name: "<red><bold>Deny Request"
+    lore:
+      - "<gray>Deny the latest teleport"
+      - "<gray>request sent to you."
+    actions:
+      - "[player] tpdeny"
+
+  wilderness:
+    slot: 20
+    material: GRASS_BLOCK
+    name: "<green><bold>Wilderness"
+    lore:
+      - "<gray>Random teleport."
+    cooldown: 5
+    actions:
+      - "[player] rtp"
+
+  spawn:
+    slot: 22
+    material: BEACON
+    name: "<gold><bold>Spawn"
+    lore:
+      - "<gray>Teleport to spawn."
+    actions:
+      - "[spawn]"
+
+  death-return:
+    slot: 24
+    material: TOTEM_OF_UNDYING
+    name: "<red><bold>Return to Death"
+    lore:
+      - "<gray>Teleport to your last"
+      - "<gray>death location."
+    actions:
+      - "[back]"
+
+  return:
+    slot: 40
+    material: ARROW
+    name: "<yellow><bold>Back"
+    actions:
+      - "[return]"

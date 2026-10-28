@@ -1,0 +1,165 @@
+# Main menu  ->  /menu
+# Buttons are listed under "buttons". Slots go from 0 (top-left) to rows*9-1.
+#
+# Per button you can use:
+#   slot / slots     where it sits (11, "0-8", [1, 3, 5])
+#   material, name, lore, amount, glow, head
+#   actions          what happens on click (any click)
+#   left-actions / right-actions / shift-actions   different actions per click type
+#   permission       needed to click   |  view-permission  needed to even see it
+#   cooldown         seconds between clicks   |  close-on-click: false keeps the menu open
+#
+# Action list:  [player] cmd | [console] cmd | [menu] name | [return] | [close]
+#   [page] next/prev | [refresh] | [message] text | [broadcast] text | [actionbar] text
+#   [title] main;sub | [sound] key vol pitch | [url] https://... | [delay] ticks
+#   [spawn] | [back] | [workbench] | [enderchest] | [trash]
+
+title: "<gradient:#00e5ff:#7c4dff><bold>SMP Menu</bold></gradient>"
+rows: 6
+live: true
+
+fill:
+  mode: border
+  material: CYAN_STAINED_GLASS_PANE
+
+buttons:
+  profile:
+    slot: 4
+    material: PLAYER_HEAD
+    head: "{player}"
+    name: "<gradient:#00e5ff:#7c4dff><bold>{player}</bold></gradient>"
+    lore:
+      - "<gray>Ping: <white>{ping}ms"
+      - "<gray>Playtime: <white>{playtime}"
+      - "<gray>Deaths: <white>{deaths}"
+      - ""
+      - "<yellow>Click to see your stats"
+    actions:
+      - "[menu] stats"
+
+  travel:
+    slot: 20
+    material: ENDER_PEARL
+    name: "<light_purple><bold>Travel"
+    lore:
+      - "<gray>Teleport requests, spawn,"
+      - "<gray>wilderness and more."
+      - ""
+      - "<yellow>Click to open"
+    actions:
+      - "[menu] travel"
+
+  homes:
+    slot: 22
+    material: RED_BED
+    name: "<red><bold>Homes"
+    lore:
+      - "<gray>Set a home, go home"
+      - "<gray>and see all your homes."
+      - ""
+      - "<yellow>Click to open"
+    actions:
+      - "[menu] homes"
+
+  players:
+    slot: 24
+    material: COMPASS
+    name: "<aqua><bold>Players"
+    lore:
+      - "<gray>Online now: <white>{online}/{max}"
+      - "<gray>Pick a player to send a"
+      - "<gray>teleport request."
+      - ""
+      - "<yellow>Click to open"
+    actions:
+      - "[menu] players"
+
+  wilderness:
+    slot: 29
+    material: GRASS_BLOCK
+    name: "<green><bold>Wilderness"
+    lore:
+      - "<gray>Teleport to a random place"
+      - "<gray>and start exploring."
+      - ""
+      - "<yellow>Click to teleport"
+    cooldown: 5
+    actions:
+      - "[player] rtp"
+
+  spawn:
+    slot: 31
+    material: BEACON
+    name: "<gold><bold>Spawn"
+    lore:
+      - "<gray>Return to the server spawn."
+      - ""
+      - "<yellow>Click to teleport"
+    actions:
+      - "[spawn]"
+
+  death-return:
+    slot: 33
+    material: TOTEM_OF_UNDYING
+    name: "<red><bold>Return to Death"
+    lore:
+      - "<gray>Go back to where you"
+      - "<gray>last died (safe landing)."
+      - ""
+      - "<yellow>Click to teleport"
+    actions:
+      - "[back]"
+
+  utilities:
+    slot: 38
+    material: CRAFTING_TABLE
+    name: "<yellow><bold>Utilities"
+    lore:
+      - "<gray>Crafting table, ender chest"
+      - "<gray>and a trash bin."
+      - ""
+      - "<yellow>Click to open"
+    actions:
+      - "[menu] utilities"
+
+  status:
+    slot: 40
+    material: CLOCK
+    name: "<green><bold>Server Status"
+    lore:
+      - "<gray>TPS: {tps_color}{tps}"
+      - "<gray>Online: <white>{online}/{max}"
+      - "<gray>Time: <white>{time}"
+      - ""
+      - "<yellow>Click for details"
+    actions:
+      - "[menu] status"
+
+  info:
+    slot: 42
+    material: BOOK
+    name: "<aqua><bold>Info & Links"
+    lore:
+      - "<gray>Rules, Discord, website"
+      - "<gray>and vote links."
+      - ""
+      - "<yellow>Click to open"
+    actions:
+      - "[menu] info"
+
+  admin:
+    slot: 53
+    material: COMMAND_BLOCK
+    name: "<red><bold>Admin Tools"
+    view-permission: thuzmenu.admin
+    lore:
+      - "<gray>Only admins can see this."
+    actions:
+      - "[menu] admin"
+
+  close:
+    slot: 49
+    material: BARRIER
+    name: "<red><bold>Close"
+    actions:
+      - "[close]"

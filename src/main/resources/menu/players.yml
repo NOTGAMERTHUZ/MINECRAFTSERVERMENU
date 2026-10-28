@@ -1,0 +1,51 @@
+# Online players list (type: PLAYERS). Heads are filled in automatically,
+# 28 per page. Use {target} in the actions for the clicked player's name.
+
+title: "<gradient:#00e5ff:#7c4dff><bold>Online Players</bold></gradient>"
+rows: 6
+type: PLAYERS
+live: true
+exclude-self: true
+
+fill:
+  mode: border
+  material: LIGHT_BLUE_STAINED_GLASS_PANE
+
+player-button:
+  name: "<white><bold>{target}"
+  lore:
+    - "<gray>Ping: <white>{target_ping}ms"
+    - "<gray>World: <white>{target_world}"
+    - ""
+    - "<yellow>Left-click: <gray>teleport to them"
+    - "<yellow>Right-click: <gray>ask them to come to you"
+  left-actions:
+    - "[player] tpa {target}"
+  right-actions:
+    - "[player] tpahere {target}"
+
+buttons:
+  previous:
+    slot: 45
+    material: ARROW
+    name: "<yellow><bold>Previous Page"
+    lore:
+      - "<gray>Page {page}/{pages}"
+    actions:
+      - "[page] prev"
+
+  return:
+    slot: 49
+    material: BARRIER
+    name: "<red><bold>Back"
+    actions:
+      - "[return]"
+
+  next:
+    slot: 53
+    material: ARROW
+    name: "<yellow><bold>Next Page"
+    lore:
+      - "<gray>Page {page}/{pages}"
+    actions:
+      - "[page] next"

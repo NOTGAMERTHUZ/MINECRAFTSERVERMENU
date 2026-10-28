@@ -1,0 +1,73 @@
+# Info & links. Change the texts and the links to your own server.
+
+title: "<gradient:#00e5ff:#7c4dff><bold>Info & Links</bold></gradient>"
+rows: 4
+
+fill:
+  mode: border
+  material: BLUE_STAINED_GLASS_PANE
+
+buttons:
+  rules:
+    slot: 10
+    material: WRITABLE_BOOK
+    name: "<gold><bold>Server Rules"
+    lore:
+      - "<gray>Click to read the rules in chat."
+    actions:
+      - "[message] <gold><bold>Server Rules"
+      - "[message] <gray>1. <white>Be respectful to everyone."
+      - "[message] <gray>2. <white>No griefing or stealing."
+      - "[message] <gray>3. <white>No cheating or exploits."
+      - "[message] <gray>4. <white>Have fun!"
+
+  discord:
+    slot: 12
+    material: OAK_SIGN
+    name: "<blue><bold>Discord"
+    lore:
+      - "<gray>Join our community."
+      - ""
+      - "<yellow>Click to get the link"
+    actions:
+      - "[url] https://discord.gg/yourinvite"
+
+  website:
+    slot: 14
+    material: COMPASS
+    name: "<aqua><bold>Website"
+    lore:
+      - "<gray>News, wiki and more."
+      - ""
+      - "<yellow>Click to get the link"
+    actions:
+      - "[url] https://example.com"
+
+  vote:
+    slot: 16
+    material: EMERALD
+    name: "<green><bold>Vote"
+    lore:
+      - "<gray>Support the server."
+      - ""
+      - "<yellow>Click to get the link"
+    actions:
+      - "[url] https://example.com/vote"
+
+  credits:
+    slot: 22
+    material: NETHER_STAR
+    name: "<gradient:#00e5ff:#7c4dff><bold>ThuzMenu</bold></gradient>"
+    lore:
+      - "<gray>Forged by <white>GAMERTHUZ"
+      - ""
+      - "<yellow>Click to open GitHub"
+    actions:
+      - "[url] https://github.com/NOTGAMERTHUZ"
+
+  return:
+    slot: 31
+    material: ARROW
+    name: "<yellow><bold>Back"
+    actions:
+      - "[return]"

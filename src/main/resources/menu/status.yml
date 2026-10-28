@@ -1,0 +1,45 @@
+# Live server status (refreshes every second while open).
+
+title: "<gradient:#00e5ff:#7c4dff><bold>Server Status</bold></gradient>"
+rows: 4
+live: true
+
+fill:
+  mode: border
+  material: LIME_STAINED_GLASS_PANE
+
+buttons:
+  performance:
+    slot: 11
+    material: REPEATER
+    name: "<green><bold>Performance"
+    lore:
+      - "<gray>TPS: {tps_color}{tps}<dark_gray>/20"
+      - "<gray>MSPT: <white>{mspt}ms"
+      - "<gray>Your ping: <white>{ping}ms"
+
+  players:
+    slot: 13
+    material: PLAYER_HEAD
+    head: "{player}"
+    name: "<aqua><bold>Players"
+    lore:
+      - "<gray>Online: <white>{online}<dark_gray>/<white>{max}"
+      - "<gray>Your world: <white>{world}"
+      - "<gray>Your position: <white>{x}, {y}, {z}"
+
+  system:
+    slot: 15
+    material: IRON_BARS
+    name: "<gold><bold>System"
+    lore:
+      - "<gray>Uptime: <white>{uptime}"
+      - "<gray>Memory: <white>{ram_used}MB<dark_gray>/<white>{ram_max}MB <dark_gray>({ram_percent}%)"
+      - "<gray>Time: <white>{time}"
+
+  return:
+    slot: 31
+    material: ARROW
+    name: "<yellow><bold>Back"
+    actions:
+      - "[return]"

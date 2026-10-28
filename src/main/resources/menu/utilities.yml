@@ -1,0 +1,46 @@
+# Utilities. To restrict a button to a rank, add e.g.  permission: "rank.vip"
+
+title: "<gradient:#00e5ff:#7c4dff><bold>Utilities</bold></gradient>"
+rows: 4
+
+fill:
+  mode: border
+  material: YELLOW_STAINED_GLASS_PANE
+
+buttons:
+  workbench:
+    slot: 11
+    material: CRAFTING_TABLE
+    name: "<yellow><bold>Crafting Table"
+    lore:
+      - "<gray>Open a crafting table"
+      - "<gray>from anywhere."
+    actions:
+      - "[workbench]"
+
+  enderchest:
+    slot: 13
+    material: ENDER_CHEST
+    name: "<dark_purple><bold>Ender Chest"
+    lore:
+      - "<gray>Open your ender chest"
+      - "<gray>from anywhere."
+    actions:
+      - "[enderchest]"
+
+  trash:
+    slot: 15
+    material: CAULDRON
+    name: "<red><bold>Trash Bin"
+    lore:
+      - "<gray>Put items in to delete them."
+      - "<red>Items are gone when you close it!"
+    actions:
+      - "[trash]"
+
+  return:
+    slot: 31
+    material: ARROW
+    name: "<yellow><bold>Back"
+    actions:
+      - "[return]"

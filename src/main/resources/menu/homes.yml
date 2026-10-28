@@ -1,0 +1,59 @@
+# Homes menu. Commands call YOUR existing sethome plugin - change them to match.
+
+title: "<gradient:#00e5ff:#7c4dff><bold>Homes</bold></gradient>"
+rows: 4
+
+fill:
+  mode: border
+  material: RED_STAINED_GLASS_PANE
+
+buttons:
+  sethome:
+    slot: 11
+    material: LIME_BED
+    name: "<green><bold>Set Home"
+    lore:
+      - "<gray>Save your current location"
+      - "<gray>as your home."
+      - ""
+      - "<yellow>Click to set"
+    actions:
+      - "[player] sethome"
+
+  home:
+    slot: 13
+    material: RED_BED
+    name: "<red><bold>Go Home"
+    lore:
+      - "<gray>Teleport to your home."
+      - ""
+      - "<yellow>Click to teleport"
+    actions:
+      - "[player] home"
+
+  homes:
+    slot: 15
+    material: BOOK
+    name: "<aqua><bold>My Homes"
+    lore:
+      - "<gray>List all your homes."
+    actions:
+      - "[player] homes"
+
+  delhome:
+    slot: 22
+    material: TNT
+    name: "<dark_red><bold>Delete Home"
+    lore:
+      - "<gray>Removes your home."
+      - ""
+      - "<red>Hold SHIFT and click to confirm"
+    shift-actions:
+      - "[player] delhome"
+
+  return:
+    slot: 31
+    material: ARROW
+    name: "<yellow><bold>Back"
+    actions:
+      - "[return]"

@@ -1,0 +1,61 @@
+# Your personal stats (live).
+
+title: "<gradient:#00e5ff:#7c4dff><bold>Your Stats</bold></gradient>"
+rows: 4
+live: true
+
+fill:
+  mode: border
+  material: ORANGE_STAINED_GLASS_PANE
+
+buttons:
+  head:
+    slot: 4
+    material: PLAYER_HEAD
+    head: "{player}"
+    name: "<gradient:#00e5ff:#7c4dff><bold>{player}</bold></gradient>"
+    lore:
+      - "<gray>Gamemode: <white>{gamemode}"
+      - "<gray>Health: <red>{health}<gray>  Food: <gold>{food}"
+
+  playtime:
+    slot: 20
+    material: CLOCK
+    name: "<yellow><bold>Playtime"
+    lore:
+      - "<white>{playtime}"
+
+  deaths:
+    slot: 21
+    material: SKELETON_SKULL
+    name: "<red><bold>Deaths"
+    lore:
+      - "<white>{deaths}"
+
+  kills:
+    slot: 22
+    material: DIAMOND_SWORD
+    name: "<aqua><bold>Player Kills"
+    lore:
+      - "<white>{kills}"
+
+  mobkills:
+    slot: 23
+    material: IRON_SWORD
+    name: "<green><bold>Mob Kills"
+    lore:
+      - "<white>{mob_kills}"
+
+  level:
+    slot: 24
+    material: EXPERIENCE_BOTTLE
+    name: "<green><bold>XP Level"
+    lore:
+      - "<white>{level}"
+
+  return:
+    slot: 31
+    material: ARROW
+    name: "<yellow><bold>Back"
+    actions:
+      - "[return]"
