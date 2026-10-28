@@ -1,0 +1,52 @@
+# Admin tools - only visible and openable with the permission below.
+
+title: "<gradient:#ff5252:#ff9800><bold>Admin Tools</bold></gradient>"
+rows: 4
+permission: thuzmenu.admin
+
+fill:
+  mode: border
+  material: RED_STAINED_GLASS_PANE
+
+buttons:
+  save:
+    slot: 10
+    material: WRITABLE_BOOK
+    name: "<green><bold>Save World"
+    lore:
+      - "<gray>Saves all worlds to disk"
+      - "<gray>(good before restarts)."
+    cooldown: 30
+    actions:
+      - "[console] save-all"
+      - "[message] <green>World save started."
+
+  day:
+    slot: 12
+    material: SUNFLOWER
+    name: "<yellow><bold>Set Day"
+    actions:
+      - "[console] time set day"
+
+  clear-weather:
+    slot: 14
+    material: WATER_BUCKET
+    name: "<aqua><bold>Clear Weather"
+    actions:
+      - "[console] weather clear"
+
+  reload:
+    slot: 16
+    material: REPEATER
+    name: "<gold><bold>Reload Menus"
+    lore:
+      - "<gray>Reloads config.yml and all menus."
+    actions:
+      - "[player] thuzmenu reload"
+
+  return:
+    slot: 31
+    material: ARROW
+    name: "<yellow><bold>Back"
+    actions:
+      - "[return]"
