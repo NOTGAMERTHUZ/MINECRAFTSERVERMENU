@@ -7,6 +7,7 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+
     steps:
       - uses: actions/checkout@v4
 
@@ -22,7 +23,16 @@ jobs:
       - name: Build plugin
         run: gradle build --no-daemon
 
-      - uses: actions/upload-artifact@v4
+      - name: Verify plugin JAR
+        run: |
+          ls -lh build/libs/
+          jar tf build/libs/ThuzMenu-1.0.0.jar > jar-contents.txt
+          grep -Fx 'plugin.yml' jar-contents.txt
+          grep -Fx 'io/github/notgamerthuz/thuzmenu/ThuzMenu.class' jar-contents.txt
+
+      - name: Upload plugin JAR
+        uses: actions/upload-artifact@v4
         with:
           name: ThuzMenu
-          path: build/libs/*.jar
+          path: build/libs/ThuzMenu-1.0.0.jar
+          if-no-files-found: error
